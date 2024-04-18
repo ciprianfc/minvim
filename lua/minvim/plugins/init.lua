@@ -1,0 +1,3 @@
+-- some ggeneric settigns
+return {
+}
