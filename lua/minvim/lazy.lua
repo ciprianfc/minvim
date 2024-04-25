@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ import = "minvim.plugins" },
-	{ import = "minvim.plugins.lsp" },
 }, {
 	install = {
 		colorscheme = { "onedark" },
