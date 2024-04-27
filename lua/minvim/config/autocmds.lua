@@ -11,3 +11,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "angular.html",
+	callback = function()
+		vim.treesitter.language.register("angular", "angular.html") -- Register the filetype with treesitter for the `angular` language/parser
+	end,
+})

@@ -77,3 +77,15 @@ vim.opt.softtabstop = 2
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+
+-- add filetype for angular
+vim.filetype.add({
+	pattern = {
+		[".*%.component%.html"] = "angular.html", -- Sets the filetype to `angular.html` if it matches the pattern
+	},
+})
+
+-- go tmpl filetype
+vim.filetype.add({
+	extension = { tmpl = "html" },
+})

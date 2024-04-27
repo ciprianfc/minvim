@@ -16,6 +16,8 @@ return { -- Highlight, edit, and navigate code
 			"gomod",
 			"gowork",
 			"gosum",
+			"angular",
+			"typescript",
 		},
 
 		-- Autoinstall languages that are not installed

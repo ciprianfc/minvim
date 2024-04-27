@@ -173,25 +173,33 @@ return {
 				--    https://github.com/pmizio/typescript-tools.nvim
 				--
 				-- But for many setups, the LSP (`tsserver`) will work just fine
-				-- tsserver = {},
+				tsserver = {},
 				html = {
-					filetypes = { "html", "tmpl", "templ", "template", "angular.html", "angular" },
+					filetypes = { "html", "tmpl", "templ", "template", "angular.html" },
 				},
 
-				emmet_language_server = {},
-				-- cssls = {},
+				emmet_language_server = {
+					filetypes = {
+						"css",
+						"eruby",
+						"template",
+						"html",
+						"tmpl",
+						"htmldjango",
+						"javascriptreact",
+						"less",
+						"pug",
+						"sass",
+						"scss",
+						"typescriptreact",
+						"angular.html",
+					},
+				},
+				cssls = {},
 				--
-				-- angularls = {
-				-- 	filetypes = {
-				-- 		"angular",
-				-- 		"angular.html",
-				-- 		"ts",
-				-- 		"typescript",
-				-- 		"html",
-				-- 		"typescriptreact",
-				-- 		"typescript.tsx",
-				-- 	},
-				-- },
+				angularls = {
+					filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular.html" },
+				},
 
 				lua_ls = {
 					-- cmd = {...},
@@ -229,6 +237,7 @@ return {
 				"html",
 				"cssls",
 				"emmet-language-server",
+				"angularls",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
