@@ -174,9 +174,12 @@ return {
 				--
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				-- tsserver = {},
-				-- html = {
-				-- 	filetypes = { "html", "tmpl", "templ", "template", "angular.html", "angular" },
-				-- },
+				html = {
+					filetypes = { "html", "tmpl", "templ", "template", "angular.html", "angular" },
+				},
+
+				emmet_language_server = {},
+				-- cssls = {},
 				--
 				-- angularls = {
 				-- 	filetypes = {
@@ -222,6 +225,10 @@ return {
 				"goimports",
 				"gofumpt",
 				"gomodifytags",
+				"prettierd",
+				"html",
+				"cssls",
+				"emmet-language-server",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
