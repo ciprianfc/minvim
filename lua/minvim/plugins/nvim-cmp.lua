@@ -34,7 +34,8 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
-		-- { 'roobert/tailwindcss-colorizer-cmp.nvim', config = true },
+		-- { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+		-- "luckasRanarison/tailwind-tools.nvim",
 		"onsails/lspkind.nvim", -- vs-code like pictograms
 	},
 	config = function()
@@ -111,6 +112,11 @@ return {
 				format = lspkind.cmp_format({
 					maxwidth = 50,
 					ellipsis_char = "...",
+					-- before = require("tailwind-tools.cmp").lspkind_format,
+					-- before = function(entry, item)
+					-- 	-- format_kinds(entry, item) -- add icons
+					-- 	return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+					-- end,
 				}),
 			},
 		})

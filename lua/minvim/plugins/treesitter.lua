@@ -1,5 +1,6 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
+	-- { "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" },
 	build = ":TSUpdate",
 	opts = {
 		ensure_installed = {

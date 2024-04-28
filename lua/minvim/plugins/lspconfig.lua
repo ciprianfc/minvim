@@ -197,6 +197,14 @@ return {
 				},
 				cssls = {},
 				--
+
+				-- tailwindcss = {
+				-- 	filetypes = vim.list_extend(
+				-- 		require("lspconfig.server_configurations.tailwindcss").default_config.filetypes,
+				-- 		{ "angular.html", "angular" }
+				-- 	),
+				-- },
+
 				angularls = {
 					filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular.html" },
 				},
@@ -238,6 +246,7 @@ return {
 				"cssls",
 				"emmet-language-server",
 				"angularls",
+				-- "tailwindcss",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
