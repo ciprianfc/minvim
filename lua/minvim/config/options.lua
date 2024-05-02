@@ -79,11 +79,11 @@ vim.opt.softtabstop = 2
 vim.opt.hlsearch = true
 
 -- add filetype for angular
-vim.filetype.add({
-	pattern = {
-		[".*%.component%.html"] = "angular.html", -- Sets the filetype to `angular.html` if it matches the pattern
-	},
-})
+-- vim.filetype.add({
+-- 	pattern = {
+-- 		[".*%.component%.html"] = "angular.html", -- Sets the filetype to `angular.html` if it matches the pattern
+-- 	},
+-- })
 
 -- go tmpl filetype
 vim.filetype.add({

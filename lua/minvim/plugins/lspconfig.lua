@@ -175,38 +175,38 @@ return {
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				tsserver = {},
 				html = {
-					filetypes = { "html", "tmpl", "templ", "template", "angular.html" },
+					-- filetypes = { "html", "tmpl", "templ", "template", "angular.html" },
 				},
 
-				emmet_language_server = {
-					filetypes = {
-						"css",
-						"eruby",
-						"template",
-						"html",
-						"tmpl",
-						"htmldjango",
-						"javascriptreact",
-						"less",
-						"pug",
-						"sass",
-						"scss",
-						"typescriptreact",
-						"angular.html",
-					},
-				},
+				-- emmet_language_server = {
+				-- 	filetypes = {
+				-- 		"css",
+				-- 		"eruby",
+				-- 		"template",
+				-- 		"html",
+				-- 		"tmpl",
+				-- 		"htmldjango",
+				-- 		"javascriptreact",
+				-- 		"less",
+				-- 		"pug",
+				-- 		"sass",
+				-- 		"scss",
+				-- 		"typescriptreact",
+				-- 		"angular.html",
+				-- 	},
+				-- },
 				cssls = {},
 				--
 
-				-- tailwindcss = {
-				-- 	filetypes = vim.list_extend(
-				-- 		require("lspconfig.server_configurations.tailwindcss").default_config.filetypes,
-				-- 		{ "angular.html", "angular" }
-				-- 	),
-				-- },
+				tailwindcss = {
+					-- filetypes = vim.list_extend(
+					-- 	require("lspconfig.server_configurations.tailwindcss").default_config.filetypes,
+					-- 	{ "angular.html", "angular" }
+					-- ),
+				},
 
 				angularls = {
-					filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular.html" },
+					-- filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular.html" },
 				},
 
 				lua_ls = {
@@ -246,7 +246,7 @@ return {
 				"cssls",
 				"emmet-language-server",
 				"angularls",
-				-- "tailwindcss",
+				"tailwindcss",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
