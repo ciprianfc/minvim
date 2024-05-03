@@ -47,6 +47,7 @@ return { -- Autoformat
 			["graphql"] = { { "prettierd", "prettier" } },
 			["handlebars"] = { { "prettierd", "prettier" } },
 			["angular"] = { { "prettierd", "prettier" } },
+			["go"] = { { "goimports", "gofumpt" } },
 		},
 	},
 }
