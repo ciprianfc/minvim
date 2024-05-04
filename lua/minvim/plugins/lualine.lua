@@ -10,7 +10,7 @@ return {
 
 		local options = {
 			icons_enabled = true,
-			theme = "onedark",
+			theme = "catppuccin-mocha",
 			-- component_separators = "|",
 			-- section_separators = "",
 		}
@@ -24,7 +24,7 @@ return {
 						color = { fg = "#ff9e64" },
 					},
 					{ "encoding" },
-					{ "fileformat" },
+					-- { "fileformat" },
 					{ "filetype" },
 				},
 			},

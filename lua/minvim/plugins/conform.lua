@@ -31,7 +31,6 @@ return { -- Autoformat
 			-- You can use a sub-list to tell conform to run *until* a formatter
 			-- is found.
 			-- javascript = { { "prettierd", "prettier" } },
-			-- angular = { 'prettier' },
 			["javascript"] = { { "prettierd", "prettier" } },
 			["javascriptreact"] = { { "prettierd", "prettier" } },
 			["typescript"] = { { "prettierd", "prettier" } },
@@ -45,7 +44,7 @@ return { -- Autoformat
 			["jsonc"] = { { "prettierd", "prettier" } },
 			["yaml"] = { { "prettierd", "prettier" } },
 			["graphql"] = { { "prettierd", "prettier" } },
-			["handlebars"] = { { "prettierd", "prettier" } },
+			-- ["handlebars"] = { { "prettierd", "prettier" } },
 			["angular"] = { { "prettierd", "prettier" } },
 			["go"] = { { "goimports", "gofumpt" } },
 		},

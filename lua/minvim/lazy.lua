@@ -15,7 +15,7 @@ require("lazy").setup({
 	{ import = "minvim.plugins" },
 }, {
 	install = {
-		colorscheme = { "onedark" },
+		colorscheme = { "catppuccin" },
 	},
 	checker = {
 		enabled = true,
