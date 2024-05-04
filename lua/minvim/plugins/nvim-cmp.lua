@@ -115,7 +115,7 @@ return {
 					-- can also be a function to dynamically calculate max width such as
 					-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
 					ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-					show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+					-- show_labelDetails = true, -- show labelDetails in menu. Disabled by default
 					before = function(entry, item)
 						-- format_kinds(entry, item) -- add icons
 						return require("tailwindcss-colorizer-cmp").formatter(entry, item)

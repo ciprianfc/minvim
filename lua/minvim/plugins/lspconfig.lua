@@ -17,9 +17,6 @@ return {
 			"hrsh7th/nvim-cmp",
 		},
 		config = function()
-			--  This function gets run when an LSP attaches to a particular buffer.
-			--    That is to say, every time a new file is opened that is associated with
-			--    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
 			--    function will be executed to configure the current buffer
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -80,42 +77,43 @@ return {
 					--
 					-- When you move your cursor, the highlights will be cleared (the second autocommand).
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.server_capabilities.documentHighlightProvider then
-						local highlight_augroup =
-							vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
-						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-							buffer = event.buf,
-							group = highlight_augroup,
-							callback = vim.lsp.buf.document_highlight,
-						})
+					if client then
+						if client.server_capabilities.documentHighlightProvider then
+							local highlight_augroup =
+								vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+							vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+								buffer = event.buf,
+								group = highlight_augroup,
+								callback = vim.lsp.buf.document_highlight,
+							})
 
-						vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-							buffer = event.buf,
-							group = highlight_augroup,
-							callback = vim.lsp.buf.clear_references,
-						})
-					end
+							vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+								buffer = event.buf,
+								group = highlight_augroup,
+								callback = vim.lsp.buf.clear_references,
+							})
+						end
 
-					-- https://github.com/golang/go/issues/54531#issuecomment-1464982242
-					if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
-						-- if client.name == "gopls" then
-						local semantic = client.config.capabilities.textDocument.semanticTokens
-						print(semantic)
-						client.server_capabilities.semanticTokensProvider = {
-							full = true,
-							legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
-							range = true,
-						}
-					end
+						-- https://github.com/golang/go/issues/54531#issuecomment-1464982242
+						if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
+							local semantic = client.config.capabilities.textDocument.semanticTokens
+							print(semantic)
+							client.server_capabilities.semanticTokensProvider = {
+								full = true,
+								legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
+								range = true,
+							}
+						end
 
-					-- The following autocommand is used to enable inlay hints in your
-					-- code, if the language server you are using supports them
-					--
-					-- This may be unwanted, since they displace some of your code
-					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-						map("<leader>th", function()
-							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-						end, "[T]oggle Inlay [H]ints")
+						-- The following autocommand is used to enable inlay hints in your
+						-- code, if the language server you are using supports them
+						--
+						-- This may be unwanted, since they displace some of your code
+						if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+							map("<leader>th", function()
+								vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+							end, "[T]oggle Inlay [H]ints")
+						end
 					end
 				end,
 			})
@@ -187,11 +185,8 @@ return {
 				-- pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-				-- But for many setups, the LSP (`tsserver`) will work just fine
 				tsserver = {},
-				html = {
-					-- filetypes = { "html", "tmpl", "templ", "template", "angular.html" },
-				},
+				html = {},
 
 				-- emmet_language_server = {
 				-- 	filetypes = {
@@ -213,16 +208,9 @@ return {
 				cssls = {},
 				--
 
-				tailwindcss = {
-					-- filetypes = vim.list_extend(
-					-- 	require("lspconfig.server_configurations.tailwindcss").default_config.filetypes,
-					-- 	{ "angular.html", "angular" }
-					-- ),
-				},
+				tailwindcss = {},
 
-				angularls = {
-					-- filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular.html" },
-				},
+				angularls = {},
 
 				lua_ls = {
 					-- cmd = {...},
