@@ -1,7 +1,15 @@
 return { -- Highlight, edit, and navigate code
-	"nvim-treesitter/nvim-treesitter",
+	-- "nvim-treesitter/nvim-treesitter",
+	"dlvandenberg/nvim-treesitter",
+	-- branch = "feature-angular",
+	branch = "master",
 	-- { "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" },
 	build = ":TSUpdate",
+	event = { "BufRead", "BufNewFile" },
+	-- dependencies = {
+	-- 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+	-- 	{ "nvim-treesitter/playground" },
+	-- },
 	opts = {
 		ensure_installed = {
 			"bash",
@@ -28,7 +36,8 @@ return { -- Highlight, edit, and navigate code
 			-- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
 			--  If you are experiencing weird indenting issues, add the language to
 			--  the list of additional_vim_regex_highlighting and disabled languages for indent.
-			additional_vim_regex_highlighting = { "ruby" },
+			-- additional_vim_regex_highlighting = { "ruby" },
+			additional_vim_regex_highlighting = false,
 		},
 		indent = { enable = true, disable = { "ruby" } },
 	},
