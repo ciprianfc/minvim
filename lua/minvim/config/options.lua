@@ -92,3 +92,6 @@ vim.opt.hlsearch = true
 vim.filetype.add({
 	extension = { tmpl = "html" },
 })
+
+-- api settings
+-- vim.api.nvim_set_hl_ns(0, )

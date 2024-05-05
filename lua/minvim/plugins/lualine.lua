@@ -10,7 +10,7 @@ return {
 
 		local options = {
 			icons_enabled = true,
-			theme = "catppuccin-mocha",
+			theme = "catppuccin",
 			-- component_separators = "|",
 			-- section_separators = "",
 		}
