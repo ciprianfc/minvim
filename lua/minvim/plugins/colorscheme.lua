@@ -18,7 +18,7 @@
 -- 				functions = { "italic" },
 -- 				keywords = {},
 -- 				strings = {},
--- 				variables = {},
+-- 				variables = { "italic" },
 -- 				numbers = {},
 -- 				booleans = {},
 -- 				properties = { "italic" },
@@ -64,6 +64,7 @@
 -- 	end,
 -- }
 --
+
 return {
 	"olimorris/onedarkpro.nvim",
 	priority = 1000, -- Make sure to load this before all the other start plugins.
@@ -79,8 +80,6 @@ return {
 
 		require("onedarkpro").setup(opts)
 		vim.cmd.colorscheme("onedark")
-		-- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-		-- vim.cmd.colorscheme("catppuccin-mocha")
 	end,
 }
 
