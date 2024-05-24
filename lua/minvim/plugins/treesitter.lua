@@ -27,6 +27,7 @@ return { -- Highlight, edit, and navigate code
 			"gosum",
 			"angular",
 			"typescript",
+			"svelte",
 		},
 
 		-- Autoinstall languages that are not installed
