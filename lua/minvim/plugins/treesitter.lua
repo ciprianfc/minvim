@@ -28,6 +28,7 @@ return { -- Highlight, edit, and navigate code
 			"angular",
 			"typescript",
 			"svelte",
+			"rust",
 		},
 
 		-- Autoinstall languages that are not installed

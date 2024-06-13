@@ -239,6 +239,9 @@ return {
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
 
+				-- rust
+				"rust_analyzer",
+
 				-- go
 				"goimports",
 				"gofumpt",
