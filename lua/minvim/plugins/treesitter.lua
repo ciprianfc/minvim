@@ -1,6 +1,7 @@
 return { -- Highlight, edit, and navigate code
-	-- "nvim-treesitter/nvim-treesitter",
-	"dlvandenberg/nvim-treesitter",
+	"nvim-treesitter/nvim-treesitter",
+	-- this is for angular--replace
+	-- "dlvandenberg/nvim-treesitter",
 	-- branch = "feature-angular",
 	branch = "master",
 	-- { "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" },
